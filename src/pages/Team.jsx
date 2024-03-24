@@ -6,7 +6,7 @@ const Team = () => {
   const people = [
     {
       name: 'Sarvesh Kumar',
-      role: 'Frontend Devloper/Backend Devloper',
+      role: 'Frontend Developer and Backend Devloper',
       imageUrl:
         'https://th.bing.com/th/id/OIP.y5eaUQRP8dcHIIJlwI9D9gAAAA?w=474&h=484&rs=1&pid=ImgDetMain',
     },
@@ -26,7 +26,7 @@ const Team = () => {
     
     
       return (
-        <div className="bg-gray-300 py-24 sm:py-32 sm:px-8">
+        <div className="bg-gray-300 py-24 sm:py-32 ">
           <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
             <div className="max-w-2xl">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet our leadership</h2>
@@ -35,7 +35,7 @@ const Team = () => {
                 suspendisse.
               </p>
             </div>
-            <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+            <ul role="list" className="grid gap-x-8 gap-y-12  sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
               {people.map((person) => (
                 <li key={person.name}>
                   <div className="flex items-center gap-x-6">
