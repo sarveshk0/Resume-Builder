@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import { useFirebase } from '../context/firebase';
+import { useEffect } from 'react';
 
 //import { FirebaseError } from 'firebase/app';
 
@@ -11,16 +12,16 @@ const MyNavbar=()=> {
  const firebase=useFirebase();
  const navigate=useNavigate()
 
-
- 
-const logout=()=>{
-  firebase.signOutwithcurrentUser();
-  navigate("/login");
+ const loggedout=()=>{
+    firebase.signOutwithcurrentUser();
+    navigate("/")
 }
+
+
   return (
      
-        <Navbar bg="dark" data-bs-theme="dark" className='h-20  ' >
-       <div className='h-24 flex flex-row  items-center space-x-9 pl-5'>
+        <Navbar bg="dark" data-bs-theme="dark" className='h-20 w-[100vw]  ' >
+       <div className='h-24 flex flex-row  items-center  pl-5'>
       <Navbar.Brand className='text-white ' href="#home"><img
           className="mx-auto h-10 w-auto"
           src="https://th.bing.com/th/id/OIP.TN139HIW_hKAZlSr5JpsRQHaBf?rs=1&pid=ImgDetMain"
@@ -36,7 +37,7 @@ const logout=()=>{
      
       <div>
         {
-          firebase.isloggedin?(<Button className='text-2xl' onClick={logout}>Logout</Button>):(<div className='space-y-2 text-2xl '>
+          firebase.isloggedin?(<Button className='text-2xl'  onClick={loggedout}>Logout</Button>):(<div className='space-y-2 text-2xl '>
             <Button onClick={e=>navigate("/login")}>Login</Button> <Button onClick={e=>navigate("/register")}>Signup</Button>
           </div>)
         }

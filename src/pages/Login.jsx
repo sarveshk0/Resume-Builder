@@ -10,11 +10,12 @@ const Login = () => {
     const firebase=useFirebase();
   console.log(firebase);
   const navigate=useNavigate();
+
   useEffect(()=>{
        if(firebase.isloggedin){
-           navigate("/")
+           navigate("/dashboard")
        }
-  },[firebase,navigate])
+  },[firebase])
 
   const[email,setEmail]=useState("");
   const[password,Setpassword]=useState("");
@@ -24,8 +25,8 @@ const Login = () => {
        console.log("loginUser");
       const result= await firebase.loginuser(email,password);
       console.log(" Login successfull ", result);
-      toast.success(" Login successfull ", result)
-      navigate("/dashboard")
+        toast.success(" Login successfull ", result)
+      
  }
 
 

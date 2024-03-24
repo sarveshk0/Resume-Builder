@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from '../components/Card'
 import { useFirebase } from '../context/firebase'
+import {  Spinner } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -9,22 +11,15 @@ import { useFirebase } from '../context/firebase'
 const Dashboard = () => {
   const firebase=useFirebase();
 const isloggedin=firebase.isloggedin;
+const navigate=useNavigate();
+const[isloading,setIsloading]=useState(true)
 
 useEffect(()=>{
-    if(!isloggedin)
-    {
-      render(<RotatingLines
-        visible={true}
-        height="96"
-        width="96"
-        color="grey"
-        strokeWidth="5"
-        animationDuration="0.75"
-        ariaLabel="rotating-lines-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-        />)
-    }
+
+   if(!isloggedin){
+    navigate("/login")
+    alert("Please Login")
+   }
 },[])
 
    
@@ -60,12 +55,25 @@ const cardDetails=[
     <div className=" grid grid-rows-2 grid-cols-2 bg-blue-950">
 
       {/* <img src={require("../images/temp2.png")} alt="" /> */}
+     
+   
+     
+     
       {
-        !isloggedin?(<h1 className='bg-blue-950 text-white mt-12 h-18 w-[100vw] flex items-center justify-center'>Please Login </h1>):
-        cardDetails.map((cardDetail)=>( 
+        !isloggedin ?( 
+        <div className='flex justify-center items-center w-[100vw] h-[50vh]' > 
+            <Spinner className='w-12'  animation="border" role="status" variant='light' >
+            <span className="visually-hidden ">Loading...</span>
+           </Spinner>
+           <h1></h1>
+        </div>
+     ):
+       ( cardDetails.map((cardDetail)=>( 
         <Card cardDetail= {cardDetail} key={cardDetail.id}  {...cardDetail}/>
-     ))
+        )))
       }
+
+      
    
 
     </div>
