@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Card from '../components/Card'
 import { useFirebase } from '../context/firebase'
 
@@ -9,6 +9,23 @@ import { useFirebase } from '../context/firebase'
 const Dashboard = () => {
   const firebase=useFirebase();
 const isloggedin=firebase.isloggedin;
+
+useEffect(()=>{
+    if(!isloggedin)
+    {
+      render(<RotatingLines
+        visible={true}
+        height="96"
+        width="96"
+        color="grey"
+        strokeWidth="5"
+        animationDuration="0.75"
+        ariaLabel="rotating-lines-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        />)
+    }
+},[])
 
    
   
