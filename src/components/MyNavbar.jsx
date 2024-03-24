@@ -23,13 +23,13 @@ const MyNavbar=()=> {
 
      
         <Navbar  collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark" className='w-[100vw] ' >
-       <div className='flex justify-center items-center space-x-6 '>
+       <div className='sm:flex flex justify-center items-center space-x-2 '>
       <Navbar.Brand className='text-white ' href="#home"><img
-          className="mx-auto h-10 w-auto"
+          className="mx-auto h-10 w-auto visible  "
           src="https://th.bing.com/th/id/OIP.TN139HIW_hKAZlSr5JpsRQHaBf?rs=1&pid=ImgDetMain"
           alt="resume buider icon"
         /></Navbar.Brand>
-      <Nav className="me-auto ">
+      <Nav className="me-auto flex flex-row space-x-3  ">
         <Nav.Link className='text-white' href="/">Home</Nav.Link>
         <Nav.Link  className="text-white"href="/dashboard">Dashboard </Nav.Link>
         
