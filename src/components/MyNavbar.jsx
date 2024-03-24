@@ -19,9 +19,11 @@ const MyNavbar=()=> {
 
 
   return (
+      
+
      
-        <Navbar bg="dark" data-bs-theme="dark" className='h-20 w-[100vw]  ' >
-       <div className='h-24 flex flex-row  items-center  pl-5'>
+        <Navbar  collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark" className='w-[100vw] ' >
+       <div className='flex justify-center items-center space-x-6 '>
       <Navbar.Brand className='text-white ' href="#home"><img
           className="mx-auto h-10 w-auto"
           src="https://th.bing.com/th/id/OIP.TN139HIW_hKAZlSr5JpsRQHaBf?rs=1&pid=ImgDetMain"
@@ -45,6 +47,8 @@ const MyNavbar=()=> {
       
    </div>
   </Navbar>
+
+  
   
 
 

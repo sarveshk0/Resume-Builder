@@ -48,7 +48,7 @@ const Home = () => {
     <Herosection/>
     <img src="https://cdn-blog.novoresume.com/articles/cv-vs-resume-what-is-the-difference/bg.png" alt="" />
     <Features/>
-    <img src={require("../home.png")} alt="" />
+       <img src={require("../home.png")} alt="" />
     <Team/>
 
 
