@@ -3,7 +3,7 @@ import Register from "./pages/Register"
 import Login from "./pages/Login"
 import MyNavbar from "./components/MyNavbar"
 import Home from "./pages/Home"
-import Team from "./pages/Team"
+
 import About from "./pages/About"
 import Dashboard from "./pages/Dashboard"
 import { ToastContainer } from 'react-toastify';
@@ -26,15 +26,17 @@ const App = () => {
      <Route path="/dashboard" element={<Dashboard/>}></Route>
      <Route path="/about" element={<About/>}></Route>
      <Route path= "/dashboard/forms/:id"  element={<Forms/>}></Route>
-     <Route path="/team" element={<Team/>}></Route>
+    
      <Route path="/dashboard/forms/resumetemp/:param1/:param2" element={<ResumeTemp />}></Route>
    
    
     </Routes>
     <Footer/>
+      </div>
+     
 
 
-    </div>
+
   )
 }
 

@@ -1,10 +1,9 @@
 
-import { useFirebase } from "../context/firebase"
+// import { useFirebase } from "../context/firebase"
 
 // import CardGroup from "react-bootstrap/esm/CardGroup";
 import Herosection from "../components/HomePageComponent/Herosection"
 import Features from "../components/HomePageComponent/Features";
-import Team from "./Team";
 
 
 // import html2canvas from 'html2canvas';
@@ -13,7 +12,7 @@ import Team from "./Team";
 
 
 const Home = () => {
-    const firebase=useFirebase();
+    // const firebase=useFirebase();
     
   
 
@@ -43,13 +42,13 @@ const Home = () => {
 
  
   return (
-    <div  >
+    <div className="min-h-screen w-full "  >
 
     <Herosection/>
     <img src="https://cdn-blog.novoresume.com/articles/cv-vs-resume-what-is-the-difference/bg.png" alt="" />
     <Features/>
        <img src={require("../home.png")} alt="" />
-    <Team/>
+    
 
 
 

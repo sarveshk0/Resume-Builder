@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from 'react'
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button'
+
 import { useNavigate } from 'react-router-dom';
 import { useFirebase } from '../context/firebase';
 
@@ -44,7 +43,7 @@ const Register = () => {
     // </div>
 
 
-    <>
+    <div className='min-h-screen w-full'>
     {/*
       This example requires updating your template:
 
@@ -117,7 +116,7 @@ const Register = () => {
       
       </div>
     </div>
-  </>
+  </div>
 
 
   )

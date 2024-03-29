@@ -23,7 +23,7 @@ const MyNavbar=()=> {
 
      
         <Navbar  collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark" className='w-[100vw] ' >
-       <div className='sm:flex flex justify-center items-center space-x-2 '>
+       <div className='flex justify-start items-center space-x-5 pl-8 '>
       <Navbar.Brand className='text-white ' href="#home"><img
           className="mx-auto h-10 w-auto visible  "
           src="https://th.bing.com/th/id/OIP.TN139HIW_hKAZlSr5JpsRQHaBf?rs=1&pid=ImgDetMain"
@@ -33,7 +33,7 @@ const MyNavbar=()=> {
         <Nav.Link className='text-white' href="/">Home</Nav.Link>
         <Nav.Link  className="text-white"href="/dashboard">Dashboard </Nav.Link>
         
-        <Nav.Link  className=" text-white"href="/team">Teams</Nav.Link>
+        
         <Nav.Link  className=" text-white"href="/about">About</Nav.Link>
       </Nav>
      

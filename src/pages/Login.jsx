@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button'
+
 import { useFirebase } from '../context/firebase';
 import { FcGoogle } from "react-icons/fc";
 import {  toast } from 'react-toastify';
@@ -53,7 +52,7 @@ const Login = () => {
 
 
 
-    <div>
+    <div className='min-h-screen w-full'>
     {/*
       This example requires updating your template:
 

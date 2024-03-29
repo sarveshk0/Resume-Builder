@@ -77,10 +77,9 @@ const Forms = () => {
 
 
   return (
-    <div className='p-5'>
-
-         
-        <Form onSubmit={handleSubmitData} >
+    <div className=''>
+  <div className='min-h-screen w-full flex items-center justify-center p-4'>
+  <Form onSubmit={handleSubmitData} >
         <Form.Group  className="mb-3" >
       <Form.Label>Summary</Form.Label>
       <Form.Control as="textarea" onChange={(e)=>setSummary(e.target.value)} value={summary} />
@@ -88,11 +87,13 @@ const Forms = () => {
        
      
      
-   
-    <Form.Group  className="mb-3" controlId="formGroupFullName">
+   <div className='flex gap-4 border p-3 '>
+   <Form.Group  className="mb-3" controlId="formGroupFullName">
       <Form.Label>Name</Form.Label>
       <Form.Control type="text" required onChange={(e)=>setName(e.target.value)} value={name}  placeholder="Enter Your Name" />
     </Form.Group>
+  
+   
     <Form.Group className="mb-3" controlId="formGroupEmail">
       <Form.Label>Email</Form.Label>
       <Form.Control type="text"required  onChange={(e)=>setEmail(e.target.value)} value={email} placeholder="enter your email" />
@@ -101,11 +102,13 @@ const Forms = () => {
       <Form.Label>Contact Number</Form.Label>
       <Form.Control type="number" required  onChange={(e)=>setcontactNum(e.target.value)} value={contactNum} />
     </Form.Group>
-
+   
+    </div>
 
     <div>
-    <h4>Address</h4>
-      <Form.Group className="mb-3" >
+    <h4 className='mt-3'>Address</h4>
+    <div className='flex gap-3 border p-3'>
+    <Form.Group className="mb-3" >
       <Form.Label>H.no/Area/Locality</Form.Label>
       <Form.Control type="text" required  onChange={(e)=>setareaName(e.target.value)} value={areaName} />
       </Form.Group>
@@ -124,12 +127,17 @@ const Forms = () => {
     <Form.Group className="mb-3" >
       <Form.Label>State Name</Form.Label>
       <Form.Control type="text" required  onChange={(e)=>setStateName(e.target.value)} value={stateName} />
-    </Form.Group> 
+    </Form.Group>
     </div>
+  </div>
 
-    <div>
+
+
+
+    <div className='mt-3'>
        <h3>Education</h3>
        <h5>Academics</h5>
+       <div className='flex gap-3 border p-3'>
        <Form.Group className="mb-3" >
       <Form.Label>SchoolName</Form.Label>
       <Form.Control type="text" onChange={(e)=>setSchoolName(e.target.value)} value={schoolName}  />
@@ -144,9 +152,12 @@ const Forms = () => {
       <Form.Label>Passing Year</Form.Label>
       <Form.Control type="text" onChange={(e)=>setschoolPassingYear(e.target.value)} value={schoolPassingYear}  />
     </Form.Group> 
+       </div>
+      
    
 
-   <h5>Tehnical/Collage </h5>
+   <h5 className='mt-3'>Tehnical/Collage </h5>
+   <div className='flex border p-3 gap-3'>
    <Form.Group className="mb-3" >
       <Form.Label>Collage Name</Form.Label>
       <Form.Control type="text" onChange={(e)=>setcollageName(e.target.value)} value={collageName}  />
@@ -161,11 +172,14 @@ const Forms = () => {
       <Form.Label>Passing Year</Form.Label>
       <Form.Control type="text" onChange={(e)=>setcollagePassingYear(e.target.value)} value={collagePassingYear}  />
     </Form.Group> 
+   </div>
+   
 
     </div>
 
-    <div>
-      <h4>Experience</h4>
+    <div className='mt-4'>
+      <h4 >Experience</h4>
+      <div className='p-3 gap-3 flex border'>
       <Form.Group className="mb-3" >
       <Form.Label>Company Name</Form.Label>
       <Form.Control type="text" onChange={(e)=>setcompanyName(e.target.value)} value={companyName}  />
@@ -181,11 +195,15 @@ const Forms = () => {
       <Form.Control type="text" onChange={(e)=>setduration(e.target.value)} value={duration}  />
     </Form.Group> 
 
+      </div>
+     
+
     </div>
 
 
-    <div>
-      <h4>Project</h4>
+    <div className='mt-4'>
+      <h4 >Project</h4>
+      <div className='p-3 border flex gap-3'>
       <Form.Group className="mb-3" >
       <Form.Label>Project Name</Form.Label>
       <Form.Control type="text" onChange={(e)=>setProjectName(e.target.value)} value={projectName}  />
@@ -200,6 +218,8 @@ const Forms = () => {
       <Form.Label>Project Link</Form.Label>
       <Form.Control type="url" onChange={(e)=>setprojectUrl(e.target.value)} value={projectUrl}  />
     </Form.Group> 
+      </div>
+   
 
     </div>
 
@@ -211,7 +231,7 @@ const Forms = () => {
 
 
     <Form.Group className="mb-3" >
-      <Form.Label>Interests</Form.Label>
+      <Form.Label>Interests/Hobbies</Form.Label>
       <Form.Control type="text" onChange={(e)=>setInterest(e.target.value)} value={interest}  />
     </Form.Group> 
  
@@ -233,7 +253,10 @@ const Forms = () => {
    
 
   </Form>
-    </div>
+  </div>
+</div>
+
+
   )
 }
 
