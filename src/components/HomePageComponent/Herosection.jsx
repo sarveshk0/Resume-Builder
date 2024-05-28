@@ -9,8 +9,8 @@ const Herosection = () => {
        
         <div className="bg-blue-950 pt-20">
           
-          <h1 className='text-white text-6xl text-center '>Online Resume Builder</h1>
-          <h6 className='text-gray-200 text-2xl text-center'>Quick, Easy & Free</h6>
+          <h1 className='text-white text-8xl text-center font-serif text-bold'>Online Resume Builder</h1>
+          <h6 className='text-gray-200 text-4xl text-center font-serif'>Quick, Easy & Free</h6>
           
           {/* <img  className='w-[100vw] h-[50vh]' src="https://th.bing.com/th/id/OIP.TN139HIW_hKAZlSr5JpsRQHaBf?rs=1&pid=ImgDetMain" alt="" /> */}
         <img className='w-[100vw]  mt-12 'src='https://cdn-blog.novoresume.com/articles/resume-examples/bg.png'/>

@@ -3,18 +3,20 @@ import "./styles.scss"
 const Temp2 = ({data}) => {
   console.log("data",data);
   return (
-    <div className=''>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<div className="resume-wrapper ml-32 w-[900px]   ">
-	<section className="profile section-padding text-black">
-		<div className="container ">
+
+<div className='p-0 mb-5'>
+<div className=''>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<div className="resume-wrapper w-[900px] mt-0 ">
+	<section className="profile section-padding text-black ">
+		<div className="container  ">
 			<div className="picture-resume-wrapper">
         {/* <div className="picture-resume">
         <span><img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" alt="" /></span>
         <svg version="1.1" viewBox="0 0 350 350">
   
   <defs>
-    <filter id="goo">
+    <filter id="goo"> 
       <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
       <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -9" result="cm" />
     </filter>
@@ -40,21 +42,21 @@ const Temp2 = ({data}) => {
 </g>  
 </svg>
       </div> */}
-         <div className="clearfix"></div>
+         <div className="clearfix "></div>
  </div>
       <div className="name-wrapper">
         <h1>{data.name} </h1>
       </div>
       <div className="clearfix"></div>
-      <div className="contact-info clearfix">
-      	<ul className="list-titles">
+      <div className="contact-info clearfix ">
+      	{/* <ul className="list-titles ">
       		<li>Contact </li>
       		<li>Email</li>
           <li>address</li>
       		
 
-      	</ul>
-        <ul className="list-content ">
+      	</ul> */}
+        <ul className="list-content mr-">
         	<li>{data.contactNum}</li>
         	<li>{data.email}</li> 
            <li>{data.areaName},{data.city}</li>
@@ -79,8 +81,8 @@ const Temp2 = ({data}) => {
 		</div>
 	</section>
  
-  <section className="experience section-padding  ">
-  	<div className="container">
+  <section className="experience section-padding mb-5  p-0  ">
+  	<div className="container  bg-black">
     <h3 className="experience-title ">Academics</h3>
     <div className="experience-title pr-64 ">{data.schoolDegree}, {data.schoolName}, {data.schoolPassingYear}</div>
 
@@ -107,11 +109,7 @@ const Temp2 = ({data}) => {
            <p className=''>{data.projectDesc}</p>
            <p>Project Link: <a href="">{data.projectUrl}</a></p>
         </div>
-        
-        
-      </div>
-      
-      <div className="section-wrapper clearfix">
+        <div className="section-wrapper clearfix">
       	<h3 className="section-title">Skills</h3>  
         	<ul>
         		<li className="skill  text-gray-200">{data.skill}</li>
@@ -122,7 +120,7 @@ const Temp2 = ({data}) => {
         
       </div>
       
-      
+      <br/>
       <div className="section-wrapper clearfix">
         <h3 className="section-title">Interest</h3>  
         <p className=' text-gray-200'>{data.interest}</p>
@@ -132,6 +130,11 @@ const Temp2 = ({data}) => {
         <h3 className="section-title">Certification</h3>  
         <p className=' text-gray-200'>{data.certificate}</p>
       </div>
+        
+        
+      </div>
+      
+    
        
        
       
@@ -141,6 +144,9 @@ const Temp2 = ({data}) => {
   <div className="clearfix"></div>
 </div>
     </div>
+</div>
+
+   
   )
 }
 

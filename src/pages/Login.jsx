@@ -52,7 +52,7 @@ const Login = () => {
 
 
 
-    <div className='min-h-screen w-full'>
+    <div className='min-h-screen w-full h-full'>
     {/*
       This example requires updating your template:
 

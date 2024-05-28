@@ -69,8 +69,8 @@ const cardDetails=[
        
         <header className=" bg-white w-[100vw] shadow">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <h1 className="text-3xl pt-4 font-bold tracking-tight text-gray-900 text-center"> WELCOME TO DASHBOARD</h1>
-            <h5 className="text-2xl pt-4  tracking-tight text-gray-900 text-center"> Choose a Template</h5> 
+            <h1 className="text-3xl pt-4 font-bold tracking-tight text-gray-900 text-center font-serif"> WELCOME TO DASHBOARD</h1>
+            <h5 className="text-2xl pt-4  tracking-tight text-gray-900 text-center font-serif"> Choose a Template</h5> 
           </div>
         </header>
         <main >  

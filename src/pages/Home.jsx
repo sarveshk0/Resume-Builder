@@ -42,7 +42,7 @@ const Home = () => {
 
  
   return (
-    <div className="min-h-screen w-full "  >
+    <div className="min-h-screen w-full font-serif "  >
 
     <Herosection/>
     <img src="https://cdn-blog.novoresume.com/articles/cv-vs-resume-what-is-the-difference/bg.png" alt="" />

@@ -56,7 +56,8 @@ a{color:$linkColor; text-decoration:none;}
 }
 
 .container {
-  min-height:600px;
+  min-height:400px;
+
 } 
 
 .profile {
@@ -89,7 +90,7 @@ a{color:$linkColor; text-decoration:none;}
       margin-bottom:10px;
     }
   .picture-resume-wrapper {
-    width:40%;
+    width:50%;
     display:block;
     float:left;
     @include breakpoint(mama-bear) {
@@ -97,7 +98,7 @@ a{color:$linkColor; text-decoration:none;}
     }
   }
   .picture-resume {
-    width:220px;
+    width:230px;
     height:220px;
     background-size:cover;
     border-radius:50%;

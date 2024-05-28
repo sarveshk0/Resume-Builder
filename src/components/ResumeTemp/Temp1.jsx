@@ -129,26 +129,7 @@ const Temp1 = ({data}) => {
          </div>
          
        </div>
-       <div className="skills__item">
-           <div className="left"><div className="name">
-             {}</div></div>
-           {/* <div className="right">
-                          <input  id="ck1" type="checkbox" />
-
-             <label htmlFor="ck1"></label>
-                          <input id="ck2" type="checkbox" />
-
-              <label htmlFor="ck2"></label>
-                         <input id="ck3" type="checkbox" />
-
-              <label htmlFor="ck3"></label>
-                           <input id="ck4" type="checkbox" />
-            <label htmlFor="ck4"></label>
-                          <input id="ck5" type="checkbox" />
-              <label htmlFor="ck5"></label>
-
-           </div> */}
-         </div>
+      
          
        </div>
      <div className="section">
