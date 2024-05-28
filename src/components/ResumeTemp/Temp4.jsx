@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Temp4.css"
-const Temp4 = () => {
+const Temp4 = ({data}) => {
+    console.log("data",data);
   return (
   
     <section className="main-section">
@@ -15,7 +16,7 @@ const Temp4 = () => {
                         <i className="bi bi-geo-alt-fill"></i>
                     </div>
                     <div className="contact-text">
-                        <p>123 Anywhere St., Any City, ST 12345</p>
+                        <p>{data.areaname},</p>
                     </div>
                 </div>
                 <div className="contact-list">
@@ -23,7 +24,7 @@ const Temp4 = () => {
                         <i className="bi bi-envelope-fill"></i>
                     </div>
                     <div className="contact-text">
-                        <p>hello@reallygreatsite.com</p>
+                        <p>{data.email}</p>
                     </div>
                 </div>
                 <div className="contact-list">

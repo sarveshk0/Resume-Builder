@@ -23,7 +23,8 @@ export default function Card({cardDetail}) {
 
 
   return (
-    <MDBCard className='m-4 p-1'   style={{ maxWidth: '540px',  }}>
+    <div>
+       <MDBCard className='m-4 p-1  bg-black text-white box-border hover:scale-y-105 hover:shadow-xl hover:shadow-slate-600  '   style={{ maxWidth: '540px',  }}>
       <MDBRow className='g-0'>
         <MDBCol md='4'>
           <MDBCardImage className=''   src= {require(`../images/${cardDetail.id}.png`)} alt='' fluid />
@@ -44,5 +45,7 @@ export default function Card({cardDetail}) {
         </MDBCol>
       </MDBRow>
     </MDBCard>
+    </div>
+   
   );
 }

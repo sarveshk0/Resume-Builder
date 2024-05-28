@@ -80,7 +80,7 @@ const Forms = () => {
     <div className=''>
   <div className='min-h-screen w-full flex items-center justify-center p-4'>
   <Form onSubmit={handleSubmitData} >
-        <Form.Group  className="mb-3" >
+        <Form.Group  className="mb-3 " >
       <Form.Label>Summary</Form.Label>
       <Form.Control as="textarea" onChange={(e)=>setSummary(e.target.value)} value={summary} />
         </Form.Group>
@@ -225,9 +225,10 @@ const Forms = () => {
 
 
     <Form.Group className="mb-3" >
-      <Form.Label>Skill</Form.Label>
+      <Form.Label>Skill1</Form.Label>
       <Form.Control as="textarea" onChange={(e)=>setSkill(e.target.value)} value={skill} placeholder='HTML,CSS,JAVAscript,React' />
     </Form.Group> 
+
 
 
     <Form.Group className="mb-3" >

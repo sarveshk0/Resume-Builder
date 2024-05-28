@@ -1,6 +1,8 @@
 
 import Temp1 from "../components/ResumeTemp/Temp1";
 import Temp2 from "../components/ResumeTemp/Temp2";
+import Temp3 from "../components/ResumeTemp/Temp3";
+import Temp4 from "../components/ResumeTemp/Temp4";
 import { useEffect, useState } from "react"
 import { useFirebase } from "../context/firebase"
 import { useParams} from "react-router-dom"
@@ -45,7 +47,7 @@ const[data,setData]=useState('');
 
 
   switch(param1){
-    case':1' :
+    case':temp1' :
     return <div>
               <div id="pdf-content">
                  <Temp1 data={data}/>
@@ -57,13 +59,30 @@ const[data,setData]=useState('');
       
     
     
-    case ':2':
+    case ':temp2':
       return <div>
       <div id="pdf-content">
          <Temp2 data={data}/>
        </div>
        <Button className="mb-4 ml-80"  onClick={handleDownloadPDF}>Download PDF</Button>  
-   </div>
+       </div>
+
+    case ':temp3':
+    return <div>
+    <div id="pdf-content">
+      <Temp3 data={data}/>
+        </div>
+        <Button className="mb-4 ml-80"  onClick={handleDownloadPDF}>Download PDF</Button>  
+      </div>
+
+    case ':temp4':
+     return <div>
+    <div id="pdf-content">
+  <Temp4 data={data}/>
+     </div>
+     <Button className="mb-4 ml-80"  onClick={handleDownloadPDF}>Download PDF</Button>  
+     </div>
+
   }
 
 

@@ -18,16 +18,12 @@ const Temp3 = ({data}) => {
         <div className="left">
           <h2>Personal Information</h2>
           <p><strong>Name:</strong> {data.name}</p>
-        
-          <p><strong>Email:</strong> {data.email}</p>
+           <p><strong>Email:</strong> {data.email}</p>
           <p><strong>Phone:</strong> {data.contactNum}</p>
           <h2>Skills</h2>
           <ul>
-            <li>{data.skill[0]}</li>
-            <li>{data.skill[1]}</li>
-            <li>{data.skill[2]}</li>
-            <li>{data.skill[3]}</li>
-            
+            <li>{data.skill}</li>
+         
           </ul>
           <h2>Education</h2>
           <h3>{data.schoolDegree}</h3>

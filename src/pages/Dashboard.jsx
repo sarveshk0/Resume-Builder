@@ -3,6 +3,7 @@ import Card from '../components/Card'
 import { useFirebase } from '../context/firebase'
 import {  Spinner } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import {  toast } from 'react-toastify';
 import Temp3 from '../components/ResumeTemp/Temp3'
 import Temp4 from '../components/ResumeTemp/Temp4'
 
@@ -15,9 +16,16 @@ const isloggedin=firebase.isloggedin;
 const navigate=useNavigate();
 const[isloading,setIsloading]=useState(true)
 
+useEffect(()=>{
+ setTimeout(() => {
+    if(!isloggedin){
+      navigate("/login") && toast.error("Please Login First")
+  }
+ }, 2000);
+},[])
+  
 
 
-   
   
 const cardDetails=[
   
@@ -53,13 +61,12 @@ const cardDetails=[
 ]
 
   return (
-
-    <div className='min-h-screen w-full flex items-center justify-center p-0 bg-blue-950'>
-       {
-      !isloggedin ?(<h1 className=' bg-blue-950 h-[100vh] flex justify-center items-center text-white '>Please Login</h1>):(
-        <div>
    
-
+    <div className='min-h-screen w-full flex items-center justify-center p-0 bg-blue-950'>
+      
+        <div>
+         
+       
         <header className=" bg-white w-[100vw] shadow">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <h1 className="text-3xl pt-4 font-bold tracking-tight text-gray-900 text-center"> WELCOME TO DASHBOARD</h1>
@@ -98,8 +105,8 @@ const cardDetails=[
         
         </main>
           </div>
-      )
-    }
+      
+    
     </div>
    
 
