@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react'
 
 import { useNavigate } from 'react-router-dom';
 import { useFirebase } from '../context/firebase';
+import {  toast } from 'react-toastify';
 
 const Register = () => {
     const firebase=useFirebase();

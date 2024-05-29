@@ -30,26 +30,26 @@ useEffect(()=>{
 const cardDetails=[
   
     {  id:'temp1',
-      title: 'Temp1',
-      des: 'this is first card ,this card basically for all users',
+      title: 'Template1',
+      des: 'This template can be used for experienced and project based resume .',
       imageUrl: "..images/temp1.png",
         
     },
     {  id:'temp2',
-      title: 'Temp2',
-      des: 'this is second card ,this card basically for all users',
+      title:  'Template2',
+      des: 'this is second card ,This template can be used for experienced and project based resume',
       imageUrl:
         "..images/temp2.png",
     },
     {  id:'temp3',
-    title: 'Temp3',
-    des: 'this is third card ,this card basically for all users',
+    title: 'Template3',
+    des: 'this is third card ,This template can be used for experienced and project based resume',
     imageUrl:
       "..images/temp3.png",
   },
   {  id:'temp4',
-  title: 'Temp4',
-  des: 'this is fourth card ,this card basically for all users',
+  title: 'Template4',
+  des: 'this is fourth card ,This template can be used for experienced and project based resume',
   imageUrl:
     "..images/temp4.png",
 },
