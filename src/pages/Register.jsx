@@ -22,6 +22,7 @@ const Register = () => {
        console.log("Sigingup User");
       const result= await firebase.userCreation(email,password);
       console.log(" Signin successfull ", result);
+      toast.success(" Regestration Succefull", result)
  }
 
   return (
