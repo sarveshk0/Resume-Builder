@@ -4,6 +4,7 @@
 // import CardGroup from "react-bootstrap/esm/CardGroup";
 import Herosection from "../components/HomePageComponent/Herosection"
 import Features from "../components/HomePageComponent/Features";
+import Login from "../components/Login";
 
 
 // import html2canvas from 'html2canvas';
@@ -42,49 +43,13 @@ const Home = () => {
 
  
   return (
-    <div className="min-h-screen w-full font-serif "  >
-
-    <Herosection/>
-    <img src="https://cdn-blog.novoresume.com/articles/cv-vs-resume-what-is-the-difference/bg.png" alt="" />
-    <Features/>
-       <img src={require("../home.png")} alt="" />
-    
+    <div className=" bg-blue-950 w-full   flex flex-col md:flex-row items-center justify-between "  >
+     <Herosection/>
+      <Login/>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        {/* <CardGroup >
-      
-        { 
-            books.map((book)=>{
-           return  <BookCard link={`/book/view/${book.id}`} key={book.id} id={book.id}  {...book.data()}/>
-            })
-        }
-
-
-        </CardGroup> */}
-
-        {/* <button onClick={handleDownloadPDF}>Download PDF</button> */}
-       
-    </div>
+</div>
   )
       }
 

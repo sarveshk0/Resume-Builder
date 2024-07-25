@@ -1,152 +1,163 @@
 import React from 'react'
-import "./styles.scss"
-const Temp2 = ({data}) => {
-  console.log("data",data);
-  return (
 
-<div className='p-0 mb-5'>
-<div className=''>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<div className="resume-wrapper w-[900px] mt-0 ">
-	<section className="profile section-padding text-black ">
-		<div className="container  ">
-			<div className="picture-resume-wrapper">
-        {/* <div className="picture-resume">
-        <span><img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" alt="" /></span>
-        <svg version="1.1" viewBox="0 0 350 350">
-  
-  <defs>
-    <filter id="goo"> 
-      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
-      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -9" result="cm" />
-    </filter>
-  </defs>
-  
-  
-<g filter="url(#goo)" >  
-  
-  <circle id="main_circle" className="st0" cx="171.5" cy="175.6" r="130"/>
-  
-  <circle id="circle" className="bubble0 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble1 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble2 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble3 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble4 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble5 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble6 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble7 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble8 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble9 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble10 st1" cx="171.5" cy="175.6" r="122.7"/>
+import  { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 
-</g>  
-</svg>
-      </div> */}
-         <div className="clearfix "></div>
- </div>
-      <div className="name-wrapper">
-        <h1>{data.name} </h1>
-      </div>
-      <div className="clearfix"></div>
-      <div className="contact-info clearfix ">
-      	{/* <ul className="list-titles ">
-      		<li>Contact </li>
-      		<li>Email</li>
-          <li>address</li>
-      		
-
-      	</ul> */}
-        <ul className="list-content mr-">
-        	<li>{data.contactNum}</li>
-        	<li>{data.email}</li> 
-           <li>{data.areaName},{data.city}</li>
-           <li>{data.pincode},{data.stateName}</li>
-        </ul>
-      </div>
-      <div className="contact-presentation"> 
-      	<p><span className="bold text-black font-semibold underline">About Me:</span> {data.summary} </p>
-      </div>
-      <div className="contact-social clearfix">
-      	<ul className="list-titles">
-      		<li>Twitter </li>
-      		<li>linkedin </li>
-      	
-      	</ul>
-        <ul className="list-content"> 
-      		<li><a href="">{data.twitter}</a></li>
-      		<li><a href="">{data.linkedin}</a></li> 
-      		
-      	</ul>
-      </div>
-		</div>
-	</section>
- 
-  <section className="experience section-padding mb-5  p-0  ">
-  	<div className="container  bg-black">
-    <h3 className="experience-title ">Academics</h3>
-    <div className="experience-title pr-64 ">{data.schoolDegree}, {data.schoolName}, {data.schoolPassingYear}</div>
-
-    <h3 className="experience-title">collage/Technical</h3>
-    <div className="experience-title pr-60">{data.collageDegree}, {data.collageName}, {data.collagePassingYear}</div>
-        
-  	
-    <div className='job-wrapper clearfix mt-4 text-gray-200'>
-        <h3 className="experience-title ">Experience</h3><br />
-           <p className=''>Company-{data.companyName}</p>
-           <p>Desigintion:{data.desiginition}</p>
-           <p>Duration:{data.duration}</p>
-        </div>
-      
-      
-        
-       
-        
-      
-      
-        
-        <div className='job-wrapper clearfix text-gray-200'>
-        <h3 className="experience-title ">Project</h3><br />
-           <p className=''>{data.projectDesc}</p>
-           <p>Project Link: <a href="">{data.projectUrl}</a></p>
-        </div>
-        <div className="section-wrapper clearfix">
-      	<h3 className="section-title">Skills</h3>  
-        	<ul>
-        		<li className="skill  text-gray-200">{data.skill}</li>
-        		{/* <li className="skill-">{data.skill[2]}/ {data.skill[3]} / {data.skill[4]}/{data.skill[4]}</li> */}
-        		
-            
-        	</ul>
-        
-      </div>
-      
-      <br/>
-      <div className="section-wrapper clearfix">
-        <h3 className="section-title">Interest</h3>  
-        <p className=' text-gray-200'>{data.interest}</p>
-      </div>
-
-      <div className="section-wrapper clearfix text-gray-200">
-        <h3 className="section-title">Certification</h3>  
-        <p className=' text-gray-200'>{data.certificate}</p>
-      </div>
-        
-        
-      </div>
-      
+const styles = StyleSheet.create({
+  page: {
     
-       
-       
-      
-  	
-  </section>
-  
-  <div className="clearfix"></div>
-</div>
-    </div>
-</div>
+    color:"black",
+    lineHeight:2,
+    fontSize:12,
+    
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+    flexGrow: 1,
+    
+  },
+
+  container:{
+   flexDirection:'row',
+   gap:30,
 
    
+   
+  },
+
+
+ 
+ 
+  heading:{
+    paddingTop:40,
+      fontSize:35,
+      paddingLeft:20,
+  },
+  contactDetails:{
+   flexDirection:"column",
+    marginTop: 40,
+    paddingLeft: 20,
+    
+    
+  },
+  summary:{
+    paddingLeft:20,
+    marginTop:50,
+    width:230,
+  },
+  rightContainer:{
+    backgroundColor:'#3d3e42',
+    width:'100%',
+    Top:20,
+    height:'200%',
+    marginLeft:110,
+  },
+  rightsubsection:{
+         marginTop:50,
+         paddingHorizontal:20,
+  }
+})
+const Temp2 = ({data}) => {
+  console.log("data",data);
+
+
+
+  return (
+
+   <Document>
+    <Page size='A4' style={styles.page }>
+      
+      <View  style={styles.container}>
+         <View style={styles.left}>
+            <Text style={styles.heading}>{data.name}</Text>
+               <View style={styles.contactDetails}>
+               <Text>Phone:  {data.contactNum}</Text>
+               <Text> Email:  {data.email}</Text>  
+               <Text >Address:  {data.areaName},{data.city},{data.stateName},{data.pincode}</Text> 
+                
+               </View>
+
+               <View style={styles.summary}>
+                <Text style={{fontSize:'15', fontWeight:'bold'}}>About Me:</Text>
+               <Text>{data.summary}</Text>
+               </View>
+                
+                <View style={styles.summary}>
+                <Text style={{fontSize:'15', fontWeight:'bold'}}>LinkedIn:</Text>
+                <Text>{data.linkedIn}</Text>
+                </View>
+              
+               
+
+                
+           </View> 
+     
+          <View style={styles.rightContainer}>
+             
+             
+            <View style={styles.rightsubsection}>
+              <View>
+              <Text style={{color:'green', fontSize:'15',fontWeight:'bold'}}>Academics:</Text>
+               <Text style={{color:'white', paddingLeft:'20'}}>{data.schoolDegree},{data.schoolName}</Text>
+               <Text style={{color:'white', paddingLeft:'20'}}>{data.schoolPassingYear}</Text>
+              </View>
+                
+              <View style={{marginTop:'40'}}>
+              <Text style={{color:'green', fontSize:'15',fontWeight:'bold'}}>Collage/Technical:</Text>
+               <Text style={{color:'white', paddingLeft:'20'}}>{data.collageDegree},{data.collageName}</Text>
+               <Text style={{color:'white', paddingLeft:'20'}}>{data.collagePassingYear}</Text>
+              </View>
+
+             { data.companyName? <View style={{marginTop:'40'}}>
+              <Text style={{color:'green', fontSize:'15',fontWeight:'bold'}}>Experienc:</Text>
+               <Text style={{color:'white', paddingLeft:'20'}}>Company Name:{data.companyName}</Text>
+               <Text style={{color:'white', paddingLeft:'20'}}> Desigination:{data.desiginition}</Text>
+               <Text style={{color:'white', paddingLeft:'20'}}> Duration:{data.duration}</Text>
+              </View> :" "}
+ 
+              <View style={{marginTop:'40'}}>
+              <Text style={{color:'green', fontSize:'15',fontWeight:'bold'}}>Projects:</Text>
+               <Text style={{color:'white', paddingLeft:'20'}}>Project Name:{data. projectName}</Text>
+               <Text style={{color:'white', paddingLeft:'20'}}> Project Description:{data.projectDesc}</Text>
+               <Text style={{color:'white', paddingLeft:'20'}}> URL:{data.projectUrl}</Text>
+              </View>
+
+              <View style={{marginTop:'40'}}>
+              <Text style={{color:'green', fontSize:'15',fontWeight:'bold'}}>Skills:</Text>
+               <Text style={{color:'white', paddingLeft:'20'}}>{data.skill}</Text>
+ 
+              </View>
+              
+
+              <View style={{marginTop:'40'}}>
+              <Text style={{color:'green', fontSize:'15',fontWeight:'bold'}}>Interests:</Text>
+               <Text style={{color:'white', paddingLeft:'20'}}>{data.interest}</Text>
+              </View>
+
+              <View style={{marginTop:'40'}}>
+              <Text style={{color:'green', fontSize:'15',fontWeight:'bold'}}>Certficate:</Text>
+               <Text style={{color:'white', paddingLeft:'20'}}>{data.certificate}</Text>
+              </View>
+
+
+
+
+
+            </View>
+           
+          
+            </View> 
+        
+
+        </View>    
+      
+
+    
+         
+      
+    
+    </Page>
+   </Document>
   )
 }
 

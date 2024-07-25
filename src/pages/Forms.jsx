@@ -51,15 +51,16 @@ const Forms = () => {
    const[projectName,setProjectName]=useState("")
    const[projectDesc,setprojectDesc]=useState("")
    const[projectUrl,setprojectUrl]=useState("");
+   const[linkedIn,setLinkedIn]=useState('')
 
    
    
 
   
-
+console.log(id);
  const handleSubmitData= async (e)=>{
   e.preventDefault();
-  const res= await firebase.addResumeData(name,email,contactNum,areaName,pincode,city,stateName,summary,skill,certificate,schoolName,schoolDegree,schoolPassingYear,collageName,
+  const res= await firebase.addResumeData(name,email,contactNum,linkedIn,areaName,pincode,city,stateName,summary,skill,certificate,schoolName,schoolDegree,schoolPassingYear,collageName,
     collageDegree,collagePassingYear,interest,companyName,desiginition,duration,projectName,projectDesc,projectUrl);
 
   //  console.log("id",res.id);
@@ -101,6 +102,10 @@ const Forms = () => {
    <Form.Group className="mb-3" controlId="formGroupcontacNum">
       <Form.Label>Contact Number</Form.Label>
       <Form.Control type="number" required  onChange={(e)=>setcontactNum(e.target.value)} value={contactNum} />
+    </Form.Group>
+    <Form.Group className="mb-3" controlId="formGroupcontacNum">
+      <Form.Label>LinkedIn</Form.Label>
+      <Form.Control type="text" required  onChange={(e)=>setLinkedIn(e.target.value)} value={linkedIn} />
     </Form.Group>
    
     </div>
@@ -179,6 +184,7 @@ const Forms = () => {
 
     <div className='mt-4'>
       <h4 >Experience</h4>
+      <h6>(if you are fresher then ignore this section)</h6>
       <div className='p-3 gap-3 flex border'>
       <Form.Group className="mb-3" >
       <Form.Label>Company Name</Form.Label>

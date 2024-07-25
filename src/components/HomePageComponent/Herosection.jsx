@@ -6,14 +6,13 @@ import React from 'react'
 
 const Herosection = () => {
     return (
-       
-        <div className="bg-blue-950 pt-20">
+         <div className='font-serif '>
+              <div className="bg-blue-950 pt-20 min-w-full">
           
-          <h1 className='text-white text-8xl text-center font-serif text-bold'>Online Resume Builder</h1>
-          <h6 className='text-gray-200 text-4xl text-center font-serif'>Quick, Easy & Free</h6>
+
           
           {/* <img  className='w-[100vw] h-[50vh]' src="https://th.bing.com/th/id/OIP.TN139HIW_hKAZlSr5JpsRQHaBf?rs=1&pid=ImgDetMain" alt="" /> */}
-        <img className='w-[100vw]  mt-12 'src='https://cdn-blog.novoresume.com/articles/resume-examples/bg.png'/>
+        {/* <img className='w-[100vw]  mt-12 'src='https://cdn-blog.novoresume.com/articles/resume-examples/bg.png' alt='img'/> */}
      
           <div className=" relative isolate px-6  lg:px-8">
             <div
@@ -32,7 +31,7 @@ const Herosection = () => {
               <div className="hidden sm:mb-8 sm:flex sm:justify-center">
                 <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-400 ring-1 ring-gray-500 hover:ring-gray-200">
                   Announcing our new wesite for resume.{' '}
-                  <a href="#" className="font-semibold text-indigo-600">
+                  <a href="/" className="font-semibold text-indigo-600">
                     <span className="absolute inset-0" aria-hidden="true" />
                     Read more <span aria-hidden="true">&rarr;</span>
                   </a>
@@ -47,12 +46,12 @@ const Herosection = () => {
                 </p>
                 <div className="mt-10 flex items-center justify-center gap-x-6">
                   <a
-                    href="#"
+                    href="/"
                     className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Get started
                   </a>
-                  <a href="#" className="text-sm font-semibold leading-6 rounded-md text-white  px-3.5 py-2.5 border">
+                  <a href="/" className="text-sm font-semibold leading-6 rounded-md text-white  px-3.5 py-2.5 border">
                     Learn more <span aria-hidden="true">→</span>
                   </a>
                 </div>
@@ -72,6 +71,8 @@ const Herosection = () => {
             </div>
           </div>
         </div>
+         </div>
+        
       )  
   
 }

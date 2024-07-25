@@ -4,7 +4,7 @@ import { initializeApp } from "firebase/app";
 import {getAuth,createUserWithEmailAndPassword,
     signInWithEmailAndPassword,GoogleAuthProvider,signInWithPopup,onAuthStateChanged,signOut} from "firebase/auth"
 import {getFirestore,addDoc,collection ,doc,getDoc} from "firebase/firestore"
-import { getStorage} from "firebase/storage";
+// import { getStorage} from "firebase/storage";
 
 import {toast } from 'react-toastify';
 
@@ -33,7 +33,7 @@ export const useFirebase=()=>useContext(FirebaseContext);
 
  export const FirebaseProvider=(props)=>{
     const[user,SetUser]=useState(null)
-    const [docRefid,setdocRefid]=useState('')
+   //  const [docRefid,setdocRefid]=useState('')
 
     useEffect(()=>{
      onAuthStateChanged(firebaseAuth,(user)=>{
@@ -64,13 +64,14 @@ export const useFirebase=()=>useContext(FirebaseContext);
     
 
      // Add a new document with a generated id.
-     const addResumeData=async(name,email,contactNum,areaName,pincode,city,stateName,summary,skill,certificate,schoolName,schoolDegree,schoolPassingYear,collageName,
+     const addResumeData=async(name,email,contactNum,linkedIn,areaName,pincode,city,stateName,summary,skill,certificate,schoolName,schoolDegree,schoolPassingYear,collageName,
         collageDegree,collagePassingYear,interest,companyName,desiginition,duration,projectName,projectDesc,projectUrl)=>{
         const docRef = await addDoc(collection(firestore, "resume_data"),{
             
             name,
             email,
             contactNum,
+            linkedIn,
             areaName,
             pincode,
             city,

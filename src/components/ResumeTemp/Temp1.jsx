@@ -1,152 +1,124 @@
 
-import "./temp1.css"
 
 
+import  { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+
+const styles = StyleSheet.create({
+  page: {
+  flexDirection:"row",
+     color:"black",
+    padding:10,
+    fontSize:12,
+    
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+    flexGrow: 1,
+  },
+  name :{
+    fontSize:60,
+    color:'black',
+    marginLeft:20,
+  },
+  
+  contact:{
+   flexDirection:"column",
+    marginLeft:22,
+  },
+
+ 
+
+  heading:{
+      color:"deepskyblue",
+      fontSize:18 ,
+      textDecoration:"underline",
+      fontWeight:"extrabold",
+      padding:5,
+      textTransform:"uppercase",
+  }
+
+});
 const Temp1 = ({data}) => {
 
-  console.log("data",data);
+  // console.log("data",data);
+  
 
   return (
    
+    <Document>
+    <Page size="A4" style={styles.page }>
+         <View>
+           <Text style={styles.name}>{data.name}</Text> 
+            <View style={styles.contact}>
+               <Text> Email:{data.email}</Text>  
+               <Text> LinkedIn:{data.linkedIn}</Text>  
+                <Text>Phone:{data.contactNum}</Text> 
+                <Text >Address:{data.areaName},{data.city},{data.stateName},{data.pincode}</Text> 
+            </View>
+              
+               
+           <View style={styles.section}>
+            <Text style={styles.heading}>Summary:</Text>
+            <Text  style={{marginTop:"5", paddingHorizontal:"10"}}>{data.summary}</Text>
+          </View>
 
-<div className="container1">
-  <div className="header">
-    <div className="full-name">
-      <span className="first-name">{data.name}</span> 
-     {/* <span className="last-name">Doe</span> */}
-    </div>
-    <div className="contact-info">
-      <span className="email">Email: </span>
-      <span className="email-val">{data.email}</span>
-      <span className="separator"></span>
-      <span className="phone">Phone: </span>
-      <span className="phone-val">{data.contactNum}</span>
-    </div>
-    
-    <div className="about">
-      <span className="position">Summary</span>
-      <span className="desc">
-        {data.summary}
-        </span>
-    </div>
-  </div>
-   <div className="details">
-    <div className="section">
-      <div className="section__title">Experience</div>
-      <div className="section__list">
-        <div className="section__list-item">
-          <div className="left">
-            <div className="name">{data.companyName}</div>
-            <div className="addr">{data.desiginition}</div>
-            <div className="duration">{data.duration}</div>
-          </div>
-          {/* <div className="right">
-            <div className="name">Fr developer</div>
-            <div className="desc">did This and that</div>
-          </div> */}
-        </div>
-                <div className="section__list-item">
-          {/* <div className="left">
-            <div className="name">{data.companyName}</div>
-            <div className="addr">{data.desiginition}</div>
-            <div className="duration">{data.duration}</div>
-          </div> */}
-          {/* <div className="right">
-            <div className="name">Fr developer</div>
-            <div className="desc">did This and that</div>
-          </div> */}
-        </div>
 
-      </div>
-    </div>
-    <div className="section">
-      <div className="section__title">Education</div>
-      <div className="section__list">
-        <div className="section__list-item">
-          <div className="left">
-            <div className="name">{data.collageName}</div>
-            <div className="addr">{data.collageDegree}</div>
-            <div className="duration">{data.collagePassingYear}</div>
-          </div>
-          {/* <div className="right">
-            <div className="name">Fr developer</div>
-            <div className="desc">did This and that</div>
-          </div> */}
-        </div>
-        <div className="section__list-item">
-          <div className="left">
-            <div className="name">{data.schoolName}</div>
-            <div className="addr">{data.schoolDegree}</div>
-            <div className="duration">{data.schoolPassingYear}</div>
-          </div>
-          {/* <div className="right">
-            <div className="name">Fr developer</div>
-            <div className="desc">did This and that</div>
-          </div> */}
-        </div>
 
-      </div>
+      {
+         data.companyName?<View style={styles.section}>
+            <Text style={styles.heading}>Experience:</Text>
+            <Text  style={{marginTop:"5", paddingHorizontal:"10"}}>Company Name:{data.companyName}</Text>
+            <Text  style={{marginTop:"5", paddingHorizontal:"10"}}>{data.desiginition}</Text>
+            <Text  style={{marginTop:"5", paddingHorizontal:"10"}}> Duration:{data.duration}</Text>
+          </View>: " "
+        }
+
+
+
+         <View style={styles.section}>
+            <Text style={styles.heading}>Education:</Text>
+            <View style={{flexDirection:"row" ,gap:"20"}}>
+            <View>
+            <Text  style={{marginTop:"5", paddingHorizontal:"10"}}>{data.collageDegree}</Text>
+            <Text  style={{marginTop:"5", paddingHorizontal:"10"}}>{data.collageName},{data.collagePassingYear}</Text>
+          </View>
+          <View>
+            <Text  style={{marginTop:"5", paddingHorizontal:"10"}}>{data.schoolDegree}</Text>
+            <Text  style={{marginTop:"5", paddingHorizontal:"10"}}>{data.schoolName},{data.schoolPassingYear}</Text>
+          </View>
+            </View>
+         </View>
+
+
+
+                 
+         <View style={styles.section}>
+            <Text style={styles.heading}>Project:</Text>
+            <Text  style={{marginTop:"5", paddingHorizontal:"10"}}>Project Name: {data.projectName}</Text>
+            <Text  style={{marginTop:"5", paddingHorizontal:"10"}}> Desciption:{data.projectDesc}</Text>
+            <Text  style={{marginTop:"5", paddingHorizontal:"10"}}>ProjectUrl:{data.projectUrl}</Text>
+          </View>
+         
+          <View style={styles.section}>
+            <Text style={styles.heading}>Skills:</Text>
+            <Text  style={{marginTop:"5", paddingHorizontal:"10"}}>{data.skill}</Text>
+          </View>
+            
+          <View style={styles.section}>
+            <Text style={styles.heading}>Interests:</Text>
+            <Text  style={{marginTop:"5", paddingHorizontal:"10"}}>{data.interest}</Text>
+          </View>
+
+          </View>
       
-  </div>
-     <div className="section">
-      <div className="section__title">Projects</div> 
-       <div className="section__list">
-         <div className="section__list-item">
-           <div className="name">{data.projectName}</div>
-           <div className="text">{data.projectDesc}</div>
-         </div>
-         
-         {/* <div className="section__list-item">
-                    <div className="name">{data.projectName}</div>
-           <div className="text"><a>{data.projectDesc}</a>
-           </div>
-         </div> */}
-       </div>
-    </div>
-     <div className="section">
-       <div className="section__title">Skills</div>
-       <div className="skills">
-         <div className="skills__item">
-           <div className="left"><div className="name">
-             {data.skill}
-             </div></div>
-           {/* <div className="right">
-                          <input  id="ck1" type="checkbox" />
-
-             <label htmlFor="ck1"></label>
-                          <input id="ck2" type="checkbox" />
-
-              <label htmlFor="ck2"></label>
-                         <input id="ck3" type="checkbox" />
-
-              <label htmlFor="ck3"></label>
-                           <input id="ck4" type="checkbox" />
-            <label htmlFor="ck4"></label>
-                          <input id="ck5" type="checkbox" />
-              <label htmlFor="ck5"></label>
-
-           </div> */}
-         </div>
-         
-       </div>
-      
-         
-       </div>
-     <div className="section">
-     <div className="section__title">
-       Interests
-       </div>
-       <div className="section__list">
-         <div className="section__list-item">
-                  {data.interest}
-          </div>
-       </div>
-     </div>
-     </div>
-  </div>
-  
-
+    </Page>
+ 
+   </Document>
+   
+ 
+ 
   )
 }
 
-export default Temp1
+export default Temp1;
