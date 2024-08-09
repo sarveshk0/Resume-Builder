@@ -1,9 +1,9 @@
 
 // import { useFirebase } from "../context/firebase"
 
-// import CardGroup from "react-bootstrap/esm/CardGroup";
+
 import Herosection from "../components/HomePageComponent/Herosection"
-import Features from "../components/HomePageComponent/Features";
+
 import Login from "../components/Login";
 
 
