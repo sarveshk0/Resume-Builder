@@ -43,7 +43,7 @@ const Home = () => {
 
  
   return (
-    <div className=" bg-blue-950 w-full   flex flex-col md:flex-row items-center justify-between "  >
+    <div className=" bg-blue-950 w-full   flex flex-col md:flex-row items-center justify-around"  >
      <Herosection/>
       <Login/>
 

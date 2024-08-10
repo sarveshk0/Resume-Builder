@@ -78,8 +78,8 @@ console.log(id);
 
 
   return (
-    <div className=''>
-  <div className='min-h-screen w-full flex items-center justify-center p-4'>
+    <div className='pt-32'>
+  <div className='min-h-screen  w-full flex items-center justify-center p-4'>
   <Form onSubmit={handleSubmitData} >
         <Form.Group  className="mb-3 " >
       <Form.Label>Summary</Form.Label>

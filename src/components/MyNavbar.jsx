@@ -18,9 +18,9 @@ const MyNavbar = () => {
   };
 
   return (
-    <div className="relative ">
+    <div className="relative pb-10 ">
       <div className="bg-blue-950 z-20  w-full fixed ">
-        <h1 className="text-amber-400 text-3xl text-center font-serif text-bold">
+        <h1 className="text-amber-400 text-6xl text-center font-serif text-bold">
           Online Resume Builder
         </h1>
         <h6 className="text-amber-600 text-xl text-center font-serif">
@@ -55,7 +55,7 @@ const MyNavbar = () => {
                 </Button>
               ) : (
                 <div className="space-y-2 text-sm ">
-                  <Button onClick={(e) => navigate("/login")}>Login</Button>{" "}
+                
                   <Button onClick={(e) => navigate("/register")}>Signup</Button>
                 </div>
               )}

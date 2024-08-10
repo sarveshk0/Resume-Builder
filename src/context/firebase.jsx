@@ -1,15 +1,10 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
+import { getFirestore, addDoc, collection, doc, getDoc } from "firebase/firestore";
+import { toast } from 'react-toastify';
 
-import {getAuth,createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,GoogleAuthProvider,signInWithPopup,onAuthStateChanged,signOut} from "firebase/auth"
-import {getFirestore,addDoc,collection ,doc,getDoc} from "firebase/firestore"
-// import { getStorage} from "firebase/storage";
-
-import {toast } from 'react-toastify';
-
-
-const FirebaseContext=createContext(null);
+const FirebaseContext = createContext(null);
 const firebaseConfig = {
     apiKey: "AIzaSyC0D3VpwnD-KK_VwkerDlEV9NDHkcJhihI",
     authDomain: "resume-builder-c06c8.firebaseapp.com",
@@ -17,108 +12,113 @@ const firebaseConfig = {
     storageBucket: "resume-builder-c06c8.appspot.com",
     messagingSenderId: "966551245471",
     appId: "1:966551245471:web:91592f1f930772696788aa"
-  };
-  
-  const FirebaseApp = initializeApp(firebaseConfig);
- const firebaseAuth= getAuth(FirebaseApp);
- 
- const firestore=getFirestore(FirebaseApp);
-// const storage = getStorage(FirebaseApp);
+};
 
-  const provider=new GoogleAuthProvider(FirebaseApp)
+const FirebaseApp = initializeApp(firebaseConfig);
+const firebaseAuth = getAuth(FirebaseApp);
+const firestore = getFirestore(FirebaseApp);
+const provider = new GoogleAuthProvider();
 
-export const useFirebase=()=>useContext(FirebaseContext);
+export const useFirebase = () => useContext(FirebaseContext);
 
+export const FirebaseProvider = (props) => {
+    const [user, SetUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(firebaseAuth, (user) => {
+            SetUser(user);
+            setLoading(false);
+        });
 
- export const FirebaseProvider=(props)=>{
-    const[user,SetUser]=useState(null)
-   //  const [docRefid,setdocRefid]=useState('')
+        return () => unsubscribe();
+    }, []);
 
-    useEffect(()=>{
-     onAuthStateChanged(firebaseAuth,(user)=>{
-        if(user) SetUser(user);
-        else  SetUser(null);
-     })
-    },[])
+    const userCreation = async (email, password) => {
+        try {
+            await createUserWithEmailAndPassword(firebaseAuth, email, password);
+            toast.success("User created successfully");
+        } catch (error) {
+            toast.error(error.message);
+        }
+    };
 
-    
-    const userCreation=(email,password)=>{
-        createUserWithEmailAndPassword(firebaseAuth,email, password);
-     }
+    const loginuser = async (email, password) => {
+        try {
+            await signInWithEmailAndPassword(firebaseAuth, email, password);
+        } catch (error) {
+            toast.error(error.message);
+        }
+    };
 
-     const loginuser=(email,password)=>{
-        signInWithEmailAndPassword(firebaseAuth,email,password)
-     }
+    const SigninWithGoogle = async () => {
+        try {
+            await signInWithPopup(firebaseAuth, provider);
+        } catch (error) {
+            toast.error(error.message);
+        }
+    };
 
-     const SigninWithGoogle=()=>{
-        signInWithPopup(firebaseAuth,provider)
-     }
+    const signOutwithcurrentUser = async () => {
+        try {
+            await signOut(firebaseAuth);
+            toast.success("Successfully signed out");
+        } catch (error) {
+            toast.error(error.message);
+        }
+    };
 
+    const addResumeData = async (name, email, contactNum, linkedIn, areaName, pincode, city, stateName, summary, skill, certificate, schoolName, schoolDegree, schoolPassingYear, collageName, collageDegree, collagePassingYear, interest, companyName, desiginition, duration, projectName, projectDesc, projectUrl) => {
+        try {
+            const docRef = await addDoc(collection(firestore, "resume_data"), {
+                name,
+                email,
+                contactNum,
+                linkedIn,
+                areaName,
+                pincode,
+                city,
+                stateName,
+                summary,
+                skill,
+                certificate,
+                schoolName,
+                schoolDegree,
+                schoolPassingYear,
+                collageName,
+                collageDegree,
+                collagePassingYear,
+                interest,
+                companyName,
+                desiginition,
+                duration,
+                projectName,
+                projectDesc,
+                projectUrl,
+                userid: user.uid,
+            });
+            console.log("Document reference ID:", docRef.id);
+            return docRef;
+        } catch (error) {
+            toast.error(error.message);
+        }
+    };
 
-     const signOutwithcurrentUser=()=>{
-      signOut(firebaseAuth).then(()=>toast.success("succesfully signOut"))
-     }
+    const getDocbyid = async (id) => {
+        try {
+            const docRef = doc(firestore, "resume_data", id);
+            const result = await getDoc(docRef);
+            return result;
+        } catch (error) {
+            toast.error(error.message);
+        }
+    };
 
+    const isloggedin = user ? true : false;
 
-    
-
-     // Add a new document with a generated id.
-     const addResumeData=async(name,email,contactNum,linkedIn,areaName,pincode,city,stateName,summary,skill,certificate,schoolName,schoolDegree,schoolPassingYear,collageName,
-        collageDegree,collagePassingYear,interest,companyName,desiginition,duration,projectName,projectDesc,projectUrl)=>{
-        const docRef = await addDoc(collection(firestore, "resume_data"),{
-            
-            name,
-            email,
-            contactNum,
-            linkedIn,
-            areaName,
-            pincode,
-            city,
-            stateName,
-            summary,
-            skill,
-            certificate,
-            schoolName,
-            schoolDegree,
-            schoolPassingYear,
-            collageName,
-            collageDegree,
-            collagePassingYear,
-            interest,
-            companyName,
-            desiginition,
-            duration,
-            projectName,
-            projectDesc,
-            projectUrl,
-          userid:user.uid,
-           
-           });
-        console.log("docref id",docRef.id);
-     return docRef;
-     }
-
-     
-    
-
-
-    const getDocbyid =async(id)=>{
-        const docRef=doc(firestore,"resume_data",id);
-        const result=await getDoc(docRef);
-        return result;
-        
-     }
-
-
-
-     const isloggedin=user?true:false;
-
-
-    return(
-    
-        <FirebaseContext.Provider  value={{userCreation,loginuser,SigninWithGoogle,signOutwithcurrentUser,isloggedin,user,addResumeData,getDocbyid,}} >
+    return (
+        <FirebaseContext.Provider value={{ userCreation, loginuser, SigninWithGoogle, signOutwithcurrentUser, isloggedin, user, addResumeData, getDocbyid, loading }}>
             {props.children}
         </FirebaseContext.Provider>
-    )
-}
+    );
+};

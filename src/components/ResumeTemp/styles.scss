@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 
-$profileBg:#fff;
-$skillsBg:#3d3e42;
-$profileColor:#9099a0;
+$profileBg:#fff,
+$skillsBg:#3d3e42,
+$profileColor:#9099a0,
 $skillsColor:#9099a0; 
 $linkColor:#66cc99;
 $boldColor:#4a4e51;
@@ -61,11 +61,11 @@ a{color:$linkColor; text-decoration:none;}
 } 
 
 .profile {
-  background:$profileBg;
-  width:40%;
-  float:left;
-  color:$profileColor;
-  @include breakpoint(brother-bear) { width: 100%; }
+  background:$profileBg,
+  width:40%,
+  float:left,
+  color:$profileColor,
+  @include breakpoint(brother-bear) { width: 100%; },
   .name-wrapper {
     float:left;
     width:60%;

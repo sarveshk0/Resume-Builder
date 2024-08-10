@@ -31,28 +31,11 @@ const Login = () => {
 
 
   return (
-    // <div className='container'>
-    //     <Form onSubmit={HandleSubmit}>
-    //   <Form.Group  className="mb-3" controlId="formGroupEmail">
-    //     <Form.Label>Email address</Form.Label>
-    //     <Form.Control type="email" onChange={(e)=>setEmail(e.target.value)} value={email}  placeholder="Enter email" />
-    //   </Form.Group>
-    //   <Form.Group className="mb-3" controlId="formGroupPassword">
-    //     <Form.Label>Password</Form.Label>
-    //     <Form.Control type="password" onChange={(e)=>Setpassword(e.target.value)} value={password} placeholder="Password" />
-    //   </Form.Group>
-    //   <Button  variant="primary" type="submit">
-    //     Login
-    //   </Button>
-
-    // </Form>
-    // <h1>OR</h1>
-    // <Button onClick={firebase.SigninWithGoogle} >SignInWithGoogle</Button>
-    // </div>
+  
 
 
 
-    <div className=' w-full'>
+    <div>
    
   
     <div className=" bg-blue-950 flex min-h-full flex-1 flex-col justify-center px-10  pt-40  lg:px-4">
